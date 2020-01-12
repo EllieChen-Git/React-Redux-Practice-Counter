@@ -8,13 +8,13 @@
 
 - ##### Video: [Redux For Beginners | React Redux Tutorial - Dev Ed](https://www.youtube.com/watch?v=CVpUuw9XSjY)
 
-- **Ellie's note**: A very easy to understand React-Redux toturial, explaining the basic Redux & React Redux concepts clearly. The only thing I didn't like was that the author seemed to mutate the state directly in his video.
+- **Ellie's note**: A very easy to understand React-Redux tutorial, explaining the basic Redux & React Redux concepts clearly. The only thing I didn't like was that the author seemed to mutate the state directly in his video.
 
 ---
 
-### Steps:
+### Author's Steps:
 
-1. src\reducers\counter.js
+#### 1. src\reducers\counter.js
 
 ```javascript
 export default (state = 0, action) => {
@@ -31,7 +31,7 @@ export default (state = 0, action) => {
 };
 ```
 
-2. src\reducers\index.js
+#### 2. src\reducers\index.js
 
 ```javascript
 import counterReducer from "./counter";
@@ -39,7 +39,7 @@ import loggedReducer from "./isLogged";
 import { combineReducers } from "redux";
 ```
 
-3. src\index.js
+#### 3. src\index.js
 
 ```javascript
 import { createStore } from "redux";
@@ -47,7 +47,7 @@ import combineReducers from "./reducers";
 import { Provider } from "react-redux";
 ```
 
-4. src\actions\index.js
+#### 4. src\actions\index.js
 
 ```javascript
 export const increment = number => {
@@ -65,7 +65,7 @@ export const decrement = number => {
 };
 ```
 
-5. src\App.js
+#### 5. src\App.js
 
 ```javascript
 import { useSelector, useDispatch } from "react-redux";
@@ -77,6 +77,15 @@ function App() {
   const dispatch = useDispatch();
 }
 ```
+
+---
+
+### Ellie's Modification following G's convention
+
+#### 1. Store
+
+- Separated 'store (createStore())' into a separate file 'src\store.js'
+- Imported 'store' back to 'src\index.js'
 
 ---
 
